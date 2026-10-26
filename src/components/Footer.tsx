@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Phone, Mail } from "lucide-react";
 import { motion } from "motion/react";
 import { siteConfig } from "@/config/site";
@@ -12,9 +13,19 @@ export function Footer() {
     <footer className="border-t border-border bg-card">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:grid-cols-2 md:px-8 lg:grid-cols-4">
         <div>
-          <p className="font-display text-2xl font-semibold text-primary">
-            Magna <span className="eyebrow">Odonto</span>
-          </p>
+          <a
+            href="#inicio"
+            className="group inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg"
+            aria-label="Magna Odonto, início"
+          >
+            <Image
+              src="/logo-clinica.png"
+              alt="Magna Odonto"
+              width={1153}
+              height={457}
+              className="h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02] sm:h-11 dark:brightness-0 dark:invert"
+            />
+          </a>
           <p className="mt-3 text-sm text-muted-foreground">
             Cuidados odontológicos simplificados para todos.
           </p>

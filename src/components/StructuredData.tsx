@@ -7,6 +7,8 @@ export function StructuredData() {
     "@type": ["Dentist", "LocalBusiness", "MedicalBusiness"],
     name: siteConfig.fullName,
     alternateName: siteConfig.name,
+    image: "https://magnaodonto.com.br/logo-clinica.png",
+    logo: "https://magnaodonto.com.br/logo-clinica.png",
     description: siteConfig.seo.description,
     telephone: siteConfig.phoneRaw,
     email: siteConfig.email,

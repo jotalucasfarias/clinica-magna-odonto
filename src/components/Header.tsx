@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { siteConfig } from "@/config/site";
@@ -30,13 +31,17 @@ export function Header() {
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 py-3 md:px-8">
         <a
           href="#inicio"
-          className="group flex items-baseline gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg py-1"
+          className="group flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg py-1"
           aria-label="Magna Odonto, início"
         >
-          <span className="font-display text-2xl font-semibold text-primary transition-colors group-hover:text-accent">
-            Magna
-          </span>
-          <span className="eyebrow">Odonto</span>
+          <Image
+            src="/logo-clinica.png"
+            alt="Magna Odonto"
+            width={1153}
+            height={457}
+            priority
+            className="h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02] sm:h-11 dark:brightness-0 dark:invert"
+          />
         </a>
 
         <nav aria-label="Principal" className="hidden md:block">
