@@ -35,10 +35,10 @@ export function About() {
           transition={{ duration: 0.6, ease: EASING.smoothOut }}
         >
           <Image
-            src="/images/care-detail.jpg"
-            alt="Escova de dentes e instrumentos odontológicos sobre tecido claro"
-            width={1280}
-            height={960}
+            src="/images/recepcao.jpg"
+            alt="Recepção acolhedora e moderna da clínica Magna Odonto"
+            width={1040}
+            height={780}
             loading="lazy"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 560px"
             className="aspect-[4/3] w-full rounded-3xl object-cover shadow-sm"

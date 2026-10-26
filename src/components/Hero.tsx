@@ -61,14 +61,14 @@ export function Hero() {
         <div className="relative md:col-span-6 lg:col-span-7">
           <div className="relative overflow-hidden rounded-[2rem] md:rounded-tl-[8rem]">
             <Image
-              src="/images/hero-clinic.jpg"
-              alt="Consultório da clínica com cadeira odontológica e luz natural"
-              width={1280}
-              height={1536}
+              src="/images/clinica.jpg"
+              alt="Consultório odontológico da clínica Magna Odonto equipado para atendimentos"
+              width={1040}
+              height={780}
               priority
               fetchPriority="high"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 55vw, 620px"
-              className="aspect-[4/5] w-full object-cover md:aspect-[5/5] lg:aspect-[6/5]"
+              className="aspect-[4/5] w-full object-cover object-[25%_center] md:aspect-[5/5] lg:aspect-[6/5]"
             />
             <div
               className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/30 via-primary/5 to-transparent"
