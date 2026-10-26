@@ -59,7 +59,7 @@ export function Hero() {
         </div>
 
         <div className="relative md:col-span-6 lg:col-span-7">
-          <div className="relative overflow-hidden rounded-[2rem] md:rounded-tl-[8rem]">
+          <div className="relative overflow-hidden rounded-[2rem] md:rounded-tl-[8rem] shadow-xl shadow-primary/5">
             <Image
               src="/images/clinica.jpg"
               alt="Consultório odontológico da clínica Magna Odonto equipado para atendimentos"
@@ -67,11 +67,17 @@ export function Hero() {
               height={780}
               priority
               fetchPriority="high"
+              unoptimized
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 55vw, 620px"
-              className="aspect-[4/5] w-full object-cover object-[25%_center] md:aspect-[5/5] lg:aspect-[6/5]"
+              className="aspect-[4/5] w-full object-cover object-[25%_center] md:aspect-[5/5] lg:aspect-[6/5] contrast-[1.04] brightness-[1.02] saturate-[0.92]"
+            />
+            {/* Tonalização e harmonia de cores com a identidade da clínica */}
+            <div
+              className="pointer-events-none absolute inset-0 bg-primary/10 mix-blend-color"
+              aria-hidden="true"
             />
             <div
-              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/30 via-primary/5 to-transparent"
+              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/35 via-primary/5 to-transparent"
               aria-hidden="true"
             />
           </div>

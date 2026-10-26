@@ -34,15 +34,26 @@ export function About() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: EASING.smoothOut }}
         >
-          <Image
-            src="/images/recepcao.jpg"
-            alt="Recepção acolhedora e moderna da clínica Magna Odonto"
-            width={1040}
-            height={780}
-            loading="lazy"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 560px"
-            className="aspect-[4/3] w-full rounded-3xl object-cover shadow-sm"
-          />
+          <div className="relative overflow-hidden rounded-3xl shadow-md shadow-primary/5">
+            <Image
+              src="/images/recepcao.jpg"
+              alt="Recepção acolhedora e moderna da clínica Magna Odonto"
+              width={1040}
+              height={780}
+              loading="lazy"
+              unoptimized
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 560px"
+              className="aspect-[4/3] w-full object-cover contrast-[1.04] brightness-[1.02] saturate-[0.92]"
+            />
+            <div
+              className="pointer-events-none absolute inset-0 bg-primary/10 mix-blend-color"
+              aria-hidden="true"
+            />
+            <div
+              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/25 via-transparent to-transparent"
+              aria-hidden="true"
+            />
+          </div>
         </motion.div>
 
         <motion.div
