@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { EASING, containerVariants, itemVariants } from "@/config/motion";
 
 interface FaqItem {
   question: string;
@@ -43,40 +45,82 @@ export function Faq() {
   };
 
   return (
-    <section id="duvidas" className="bg-secondary/60 py-20 md:py-28">
+    <section id="duvidas" className="bg-secondary/60 py-20 md:py-28 overflow-hidden">
       <div className="mx-auto max-w-3xl px-5 md:px-8">
-        <p className="eyebrow">Perguntas frequentes</p>
-        <h2 className="mt-4 text-3xl font-medium text-primary md:text-4xl">
-          Dúvidas comuns
-        </h2>
-        <div className="mt-10 faq">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
+        >
+          <motion.p variants={itemVariants} className="eyebrow">
+            Perguntas frequentes
+          </motion.p>
+          <motion.h2
+            variants={itemVariants}
+            className="mt-4 text-3xl font-medium text-primary md:text-4xl"
+          >
+            Dúvidas comuns
+          </motion.h2>
+        </motion.div>
+
+        <motion.div
+          className="mt-10 divide-y divide-border border-y border-border"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.06, delayChildren: 0.1 },
+            },
+          }}
+        >
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
-              <details
-                key={faq.question}
-                open={isOpen}
-                className="border-b border-border"
-              >
-                <summary
-                  className="flex cursor-pointer list-none items-center justify-between py-4 text-left text-base font-semibold select-none"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleToggle(index);
-                  }}
+              <motion.div key={faq.question} variants={itemVariants}>
+                <button
+                  type="button"
+                  id={`faq-question-${index}`}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${index}`}
+                  onClick={() => handleToggle(index)}
+                  className="flex w-full cursor-pointer items-center justify-between py-5 text-left text-base font-semibold text-foreground transition-colors duration-200 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md select-none"
                 >
-                  {faq.question}
-                  <span aria-hidden="true" className="faq-ic">
+                  <span className="pr-4">{faq.question}</span>
+                  <motion.span
+                    aria-hidden="true"
+                    animate={{ rotate: isOpen ? 45 : 0 }}
+                    transition={{ duration: 0.25, ease: EASING.smoothOut }}
+                    className="inline-block text-2xl font-light text-accent shrink-0 leading-none"
+                  >
                     +
-                  </span>
-                </summary>
-                <div className="pb-4 leading-relaxed text-muted-foreground">
-                  {faq.answer}
-                </div>
-              </details>
+                  </motion.span>
+                </button>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      id={`faq-answer-${index}`}
+                      role="region"
+                      aria-labelledby={`faq-question-${index}`}
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.35, ease: EASING.smoothOut }}
+                      className="overflow-hidden"
+                    >
+                      <p className="pb-5 leading-relaxed text-muted-foreground text-sm md:text-base">
+                        {faq.answer}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -112,31 +112,3 @@ h1, h2, h3 {
   font-size: 0.75rem;
   font-weight: 700;
 }
-
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-.fade-up {
-  animation: 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0s 1 normal both running fadeUp;
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-details[open] .faq-ic {
-  transform: rotate(45deg);
-}
-
-.faq-ic {
-  transition: transform 0.2s;
-  font-size: 1.25rem;
-}
