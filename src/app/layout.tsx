@@ -37,10 +37,10 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: "/images/clinica.jpg",
-        width: 1040,
-        height: 780,
-        alt: "Clínica Magna Odonto em Porto Velho - RO",
+        url: "/images/og-image.jpg",
+        width: 720,
+        height: 720,
+        alt: "Clínica Magna Odonto - Sorrindo com você em Porto Velho - RO",
       },
     ],
   },
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.seo.title,
     description: siteConfig.seo.description,
-    images: ["/images/clinica.jpg"],
+    images: ["/images/og-image.jpg"],
   },
   icons: {
     icon: "/favicon.ico",
