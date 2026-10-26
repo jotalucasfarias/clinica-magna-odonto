@@ -58,24 +58,30 @@ export function Faq() {
               <details
                 key={faq.question}
                 open={isOpen}
-                className="border-b border-border transition-colors duration-200"
+                className="group/faq border-b border-border/80 transition-all duration-200 hover:border-primary/40"
               >
                 <summary
-                  className="flex cursor-pointer list-none items-center justify-between py-4 text-left text-base font-semibold select-none group transition-colors duration-200 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-sm"
+                  className="flex cursor-pointer list-none items-center justify-between py-5 text-left text-base font-semibold select-none transition-all duration-200 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   onClick={(e) => {
                     e.preventDefault();
                     handleToggle(index);
                   }}
                 >
-                  <span className={`transition-colors duration-200 ${isOpen ? "text-primary" : "group-hover:text-primary"}`}>
+                  <span
+                    className={`transition-all duration-200 ${
+                      isOpen
+                        ? "text-primary font-bold translate-x-1"
+                        : "text-foreground group-hover/faq:text-primary group-hover/faq:translate-x-1"
+                    }`}
+                  >
                     {faq.question}
                   </span>
                   <span
                     aria-hidden="true"
-                    className={`grid size-7 place-items-center rounded-full text-xl font-light text-primary transition-all duration-300 ease-out ${
+                    className={`grid size-8 shrink-0 place-items-center rounded-full text-xl font-light transition-all duration-300 ease-out ${
                       isOpen
-                        ? "rotate-45 bg-secondary text-primary"
-                        : "rotate-0 group-hover:bg-secondary/70"
+                        ? "rotate-45 bg-primary text-primary-foreground shadow-md scale-110"
+                        : "rotate-0 bg-secondary text-primary group-hover/faq:bg-primary group-hover/faq:text-primary-foreground group-hover/faq:scale-105 group-hover/faq:shadow-sm"
                     }`}
                   >
                     +
@@ -87,7 +93,7 @@ export function Faq() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="pb-4 pt-1 leading-relaxed text-muted-foreground">
+                    <div className="pb-5 pt-1 text-sm leading-relaxed text-muted-foreground md:text-base">
                       {faq.answer}
                     </div>
                   </div>

@@ -27,32 +27,32 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-40 border-b transition-[background-color,border-color,box-shadow] duration-300 backdrop-blur-md ${
+      className={`fixed inset-x-0 top-0 z-40 border-b transition-all duration-300 backdrop-blur-md ${
         scrolled
-          ? "border-border/80 bg-background/95 shadow-xs"
+          ? "border-border/80 bg-background/95 shadow-sm"
           : "border-border/60 bg-background/85"
       }`}
     >
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 py-3 md:px-8">
         <a
           href="#inicio"
-          className="group flex items-baseline gap-1.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-sm transition-transform duration-200 active:scale-[0.98]"
+          className="group flex items-baseline gap-1.5 transition-all duration-200 hover:scale-[1.02] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-sm"
           aria-label="Magna Odonto, início"
         >
-          <span className="font-display text-2xl font-semibold text-primary transition-colors group-hover:text-primary/90">
+          <span className="font-display text-2xl font-semibold text-primary transition-colors duration-200 group-hover:text-accent">
             Magna
           </span>
-          <span className="eyebrow transition-colors group-hover:text-accent/90">
+          <span className="eyebrow transition-colors duration-200 group-hover:text-primary">
             Odonto
           </span>
         </a>
 
         <nav aria-label="Principal" className="hidden md:block">
-          <ul className="flex gap-8 text-sm font-medium text-muted-foreground">
+          <ul className="flex gap-2 text-sm font-medium text-muted-foreground">
             <li>
               <a
                 href="#sobre"
-                className="relative py-1 transition-colors duration-200 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-sm"
+                className="inline-block rounded-full px-3.5 py-1.5 transition-all duration-200 hover:text-primary hover:bg-secondary/70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:scale-95"
               >
                 A clínica
               </a>
@@ -60,7 +60,7 @@ export function Header() {
             <li>
               <a
                 href="#tratamentos"
-                className="relative py-1 transition-colors duration-200 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-sm"
+                className="inline-block rounded-full px-3.5 py-1.5 transition-all duration-200 hover:text-primary hover:bg-secondary/70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:scale-95"
               >
                 Tratamentos
               </a>
@@ -68,7 +68,7 @@ export function Header() {
             <li>
               <a
                 href="#localizacao"
-                className="relative py-1 transition-colors duration-200 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-sm"
+                className="inline-block rounded-full px-3.5 py-1.5 transition-all duration-200 hover:text-primary hover:bg-secondary/70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:scale-95"
               >
                 Localização
               </a>
@@ -76,7 +76,7 @@ export function Header() {
             <li>
               <a
                 href="#duvidas"
-                className="relative py-1 transition-colors duration-200 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-sm"
+                className="inline-block rounded-full px-3.5 py-1.5 transition-all duration-200 hover:text-primary hover:bg-secondary/70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:scale-95"
               >
                 Dúvidas
               </a>
@@ -89,16 +89,16 @@ export function Header() {
             href={siteConfig.whatsappLinks.general}
             target="_blank"
             rel="noopener noreferrer"
-            className="group items-center justify-center gap-2 rounded-full text-sm font-semibold transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-xl hover:shadow-whatsapp/30 hover:brightness-105 active:translate-y-0 active:scale-[0.98] bg-whatsapp text-whatsapp-foreground shadow-lg shadow-whatsapp/25 hidden px-5 py-2.5 sm:inline-flex focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-whatsapp"
+            className="group items-center justify-center gap-2 rounded-full text-sm font-semibold transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-whatsapp/35 hover:brightness-110 active:translate-y-0 active:scale-[0.98] bg-whatsapp text-whatsapp-foreground shadow-lg shadow-whatsapp/25 hidden px-5 py-2.5 sm:inline-flex focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-whatsapp"
           >
-            <WhatsAppIcon className="size-5 fill-current transition-transform duration-300 group-hover:scale-105" />
-            Agendar avaliação
+            <WhatsAppIcon className="size-5 fill-current transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-rotate-3" />
+            <span>Agendar avaliação</span>
             <span className="sr-only">(abre o WhatsApp em nova aba)</span>
           </a>
 
           <button
             type="button"
-            className="grid size-10 place-items-center rounded-full text-primary transition-all duration-200 hover:bg-secondary/60 active:scale-95 md:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            className="grid size-10 place-items-center rounded-full text-primary transition-all duration-200 hover:bg-secondary active:scale-90 md:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             aria-expanded={isOpen}
             aria-controls="menu-mobile"
             aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
@@ -132,7 +132,7 @@ export function Header() {
               <a
                 href="#sobre"
                 onClick={closeMenu}
-                className="block py-3 font-display text-xl text-primary transition-all duration-200 hover:text-accent hover:translate-x-1"
+                className="block py-3 px-3 rounded-xl font-display text-xl text-primary transition-all duration-200 hover:text-accent hover:bg-secondary/60 hover:translate-x-2 active:scale-[0.98]"
               >
                 A clínica
               </a>
@@ -141,7 +141,7 @@ export function Header() {
               <a
                 href="#tratamentos"
                 onClick={closeMenu}
-                className="block py-3 font-display text-xl text-primary transition-all duration-200 hover:text-accent hover:translate-x-1"
+                className="block py-3 px-3 rounded-xl font-display text-xl text-primary transition-all duration-200 hover:text-accent hover:bg-secondary/60 hover:translate-x-2 active:scale-[0.98]"
               >
                 Tratamentos
               </a>
@@ -150,7 +150,7 @@ export function Header() {
               <a
                 href="#localizacao"
                 onClick={closeMenu}
-                className="block py-3 font-display text-xl text-primary transition-all duration-200 hover:text-accent hover:translate-x-1"
+                className="block py-3 px-3 rounded-xl font-display text-xl text-primary transition-all duration-200 hover:text-accent hover:bg-secondary/60 hover:translate-x-2 active:scale-[0.98]"
               >
                 Localização
               </a>
@@ -159,7 +159,7 @@ export function Header() {
               <a
                 href="#duvidas"
                 onClick={closeMenu}
-                className="block py-3 font-display text-xl text-primary transition-all duration-200 hover:text-accent hover:translate-x-1"
+                className="block py-3 px-3 rounded-xl font-display text-xl text-primary transition-all duration-200 hover:text-accent hover:bg-secondary/60 hover:translate-x-2 active:scale-[0.98]"
               >
                 Dúvidas
               </a>
@@ -169,10 +169,10 @@ export function Header() {
             href={siteConfig.whatsappLinks.general}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-xl hover:shadow-whatsapp/30 hover:brightness-105 active:translate-y-0 active:scale-[0.98] bg-whatsapp text-whatsapp-foreground shadow-lg shadow-whatsapp/25 w-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-whatsapp"
+            className="group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-whatsapp/35 hover:brightness-110 active:translate-y-0 active:scale-[0.98] bg-whatsapp text-whatsapp-foreground shadow-lg shadow-whatsapp/25 w-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-whatsapp"
           >
-            <WhatsAppIcon className="size-5 fill-current transition-transform duration-300 group-hover:scale-105" />
-            Agendar avaliação
+            <WhatsAppIcon className="size-5 fill-current transition-transform duration-300 group-hover:scale-110" />
+            <span>Agendar avaliação</span>
             <span className="sr-only">(abre o WhatsApp em nova aba)</span>
           </a>
         </nav>

@@ -9,6 +9,8 @@ export function ScrollReveal() {
       return;
     }
 
+    if (!("IntersectionObserver" in window)) return;
+
     const htmlEl = document.documentElement;
     htmlEl.classList.add("has-reveal");
 
