@@ -40,7 +40,7 @@ export function Header() {
             width={1153}
             height={457}
             priority
-            className="h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02] sm:h-11 dark:brightness-0 dark:invert"
+            className="h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02] sm:h-11"
           />
         </a>
 

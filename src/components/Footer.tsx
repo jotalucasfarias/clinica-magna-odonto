@@ -23,7 +23,7 @@ export function Footer() {
               alt="Magna Odonto"
               width={1153}
               height={457}
-              className="h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02] sm:h-11 dark:brightness-0 dark:invert"
+              className="h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02] sm:h-11"
             />
           </a>
           <p className="mt-3 text-sm text-muted-foreground">
