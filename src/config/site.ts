@@ -1,6 +1,7 @@
 export const siteConfig = {
   name: "Magna Odonto",
   fullName: "Clínica Magna Odonto",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://magnaodonto.vercel.app",
   professional: "Dra. Magna Ribeiro",
   cro: "CRO-RO 2736",
   phone: "(69) 99602-1979",

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title: siteConfig.seo.title,
   description: siteConfig.seo.description,
   authors: [{ name: siteConfig.seo.author }],
-  metadataBase: new URL("https://magnaodonto.com.br"),
+  metadataBase: new URL(siteConfig.url),
   alternates: {
     canonical: "/",
   },
