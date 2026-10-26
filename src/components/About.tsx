@@ -40,6 +40,7 @@ export function About() {
             width={1280}
             height={960}
             loading="lazy"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 560px"
             className="aspect-[4/3] w-full rounded-3xl object-cover shadow-sm"
           />
         </motion.div>

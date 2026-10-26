@@ -1,4 +1,6 @@
 import React from "react";
+import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
@@ -10,6 +12,14 @@ import { Cta } from "@/components/Cta";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { StructuredData } from "@/components/StructuredData";
+
+export const metadata: Metadata = {
+  title: siteConfig.seo.title,
+  description: siteConfig.seo.description,
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function HomePage() {
   return (

@@ -23,6 +23,7 @@ export function Footer() {
               alt="Magna Odonto"
               width={1153}
               height={457}
+              sizes="(max-width: 640px) 110px, 130px"
               className="h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02] sm:h-11"
             />
           </a>
