@@ -7,6 +7,7 @@ import { motion } from "motion/react";
 import { siteConfig } from "@/config/site";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { SPRINGS } from "@/config/motion";
+import { scrollToSection } from "@/lib/scroll";
 
 export function Footer() {
   return (
@@ -15,6 +16,7 @@ export function Footer() {
         <div>
           <a
             href="#inicio"
+            onClick={(e) => scrollToSection(e, "inicio")}
             className="group inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg"
             aria-label="Magna Odonto, início"
           >
@@ -40,7 +42,9 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="font-sans text-sm font-semibold tracking-normal">Contato</h2>
+          <h2 className="font-sans text-sm font-semibold tracking-normal text-foreground">
+            Contato
+          </h2>
           <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
             <li>
               <a
@@ -75,7 +79,9 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="font-sans text-sm font-semibold tracking-normal">Endereço</h2>
+          <h2 className="font-sans text-sm font-semibold tracking-normal text-foreground">
+            Endereço
+          </h2>
           <address className="mt-4 text-sm not-italic text-muted-foreground">
             {siteConfig.address.street}
             <br />
@@ -89,7 +95,9 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="font-sans text-sm font-semibold tracking-normal">Redes sociais</h2>
+          <h2 className="font-sans text-sm font-semibold tracking-normal text-foreground">
+            Redes sociais
+          </h2>
           <div className="mt-4 flex gap-3">
             <motion.a
               href={siteConfig.social.instagram}

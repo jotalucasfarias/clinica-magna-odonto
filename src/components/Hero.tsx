@@ -7,6 +7,7 @@ import { motion } from "motion/react";
 import { siteConfig } from "@/config/site";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { EASING, SPRINGS } from "@/config/motion";
+import { scrollToSection } from "@/lib/scroll";
 
 export function Hero() {
   return (
@@ -38,6 +39,7 @@ export function Hero() {
             </motion.a>
             <a
               href="#tratamentos"
+              onClick={(e) => scrollToSection(e, "tratamentos")}
               className="group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold text-primary transition-colors hover:bg-secondary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               Ver tratamentos{" "}

@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { siteConfig } from "@/config/site";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { EASING, SPRINGS } from "@/config/motion";
+import { scrollToSection } from "@/lib/scroll";
 
 const navLinks = [
   { href: "#sobre", label: "A clínica" },
@@ -26,11 +27,23 @@ export function Header() {
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash) {
+      const id = window.location.hash.slice(1);
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+      window.history.replaceState(null, "", window.location.pathname);
+    }
+  }, []);
+
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 py-3 md:px-8">
         <a
           href="#inicio"
+          onClick={(e) => scrollToSection(e, "inicio")}
           className="group flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg py-1"
           aria-label="Magna Odonto, início"
         >
@@ -51,6 +64,7 @@ export function Header() {
               <li key={link.href}>
                 <a
                   href={link.href}
+                  onClick={(e) => scrollToSection(e, link.href)}
                   className="relative py-1 transition-colors duration-200 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md"
                 >
                   {link.label}
@@ -149,7 +163,10 @@ export function Header() {
                 >
                   <a
                     href={link.href}
-                    onClick={closeMenu}
+                    onClick={(e) => {
+                      closeMenu();
+                      scrollToSection(e, link.href);
+                    }}
                     className="block py-3 font-display text-xl text-primary transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md"
                   >
                     {link.label}
