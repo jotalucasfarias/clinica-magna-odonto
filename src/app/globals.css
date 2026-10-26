@@ -95,6 +95,16 @@ h1, h2, h3 {
   outline-offset: 3px;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+    animation: auto ease 0s 1 normal none running none !important;
+  }
+}
+
 .eyebrow {
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -103,49 +113,30 @@ h1, h2, h3 {
   font-weight: 700;
 }
 
-/* Base interactive transitions */
-a, button, summary {
-  transition-property: color, background-color, border-color, transform, box-shadow, filter;
-  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-  transition-duration: 250ms;
-}
-
-/* Progressive Enhancement Scroll Reveal */
-.reveal {
-  opacity: 1;
-  transform: none;
-}
-
-html.has-reveal .reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-html.has-reveal .reveal.is-revealed {
-  opacity: 1;
-  transform: none;
-}
-
-html.has-reveal .reveal-delay-100 { transition-delay: 80ms; }
-html.has-reveal .reveal-delay-200 { transition-delay: 160ms; }
-html.has-reveal .reveal-delay-300 { transition-delay: 240ms; }
-html.has-reveal .reveal-delay-400 { transition-delay: 320ms; }
-html.has-reveal .reveal-delay-500 { transition-delay: 400ms; }
-
-/* Respect user preference for reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
   }
-  *,
-  html.has-reveal .reveal {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-    transform: none !important;
+  100% {
+    opacity: 1;
+    transform: none;
   }
+}
+
+.fade-up {
+  animation: 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0s 1 normal both running fadeUp;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] .faq-ic {
+  transform: rotate(45deg);
+}
+
+.faq-ic {
+  transition: transform 0.2s;
+  font-size: 1.25rem;
 }
