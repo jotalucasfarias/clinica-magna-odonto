@@ -8,6 +8,7 @@ import { Location } from "@/components/Location";
 import { Faq } from "@/components/Faq";
 import { Cta } from "@/components/Cta";
 import { Footer } from "@/components/Footer";
+import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { StructuredData } from "@/components/StructuredData";
 
 export default function HomePage() {
@@ -30,6 +31,7 @@ export default function HomePage() {
         <Cta />
       </main>
       <Footer />
+      <FloatingWhatsApp />
       <StructuredData />
     </>
   );
