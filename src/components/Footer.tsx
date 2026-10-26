@@ -29,7 +29,7 @@ export function Footer() {
             <li>
               <a
                 href={`tel:${siteConfig.phoneRaw}`}
-                className="inline-flex items-center gap-2 hover:text-primary"
+                className="inline-flex items-center gap-2 transition-colors duration-200 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-sm"
               >
                 <Phone className="size-4" aria-hidden="true" />
                 {siteConfig.phone}
@@ -40,16 +40,16 @@ export function Footer() {
                 href={siteConfig.whatsappLinks.general}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 hover:text-primary"
+                className="group inline-flex items-center gap-2 transition-colors duration-200 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-sm"
               >
-                <WhatsAppIcon className="fill-current size-4" />
+                <WhatsAppIcon className="fill-current size-4 transition-transform duration-200 group-hover:scale-110" />
                 WhatsApp
               </a>
             </li>
             <li>
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="inline-flex items-center gap-2 break-all hover:text-primary"
+                className="inline-flex items-center gap-2 break-all transition-colors duration-200 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-sm"
               >
                 <Mail className="size-4 shrink-0" aria-hidden="true" />
                 {siteConfig.email}
@@ -80,7 +80,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram da Magna Odonto"
-              className="grid size-11 place-items-center rounded-full border border-border text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+              className="grid size-11 place-items-center rounded-full border border-border text-primary transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:-translate-y-0.5 hover:shadow-sm active:translate-y-0 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -98,7 +98,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook da Magna Odonto"
-              className="grid size-11 place-items-center rounded-full border border-border text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+              className="grid size-11 place-items-center rounded-full border border-border text-primary transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:-translate-y-0.5 hover:shadow-sm active:translate-y-0 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             >
               <svg viewBox="0 0 24 24" aria-hidden="true" className="size-5 fill-current">
                 <path d="M13.5 21v-7.5H16l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.6V21h2.9Z" />

@@ -45,33 +45,52 @@ export function Faq() {
   return (
     <section id="duvidas" className="bg-secondary/60 py-20 md:py-28">
       <div className="mx-auto max-w-3xl px-5 md:px-8">
-        <p className="eyebrow">Perguntas frequentes</p>
-        <h2 className="mt-4 text-3xl font-medium text-primary md:text-4xl">
-          Dúvidas comuns
-        </h2>
-        <div className="mt-10 faq">
+        <div className="reveal">
+          <p className="eyebrow">Perguntas frequentes</p>
+          <h2 className="mt-4 text-3xl font-medium text-primary md:text-4xl">
+            Dúvidas comuns
+          </h2>
+        </div>
+        <div className="reveal reveal-delay-100 mt-10 faq">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
               <details
                 key={faq.question}
                 open={isOpen}
-                className="border-b border-border"
+                className="border-b border-border transition-colors duration-200"
               >
                 <summary
-                  className="flex cursor-pointer list-none items-center justify-between py-4 text-left text-base font-semibold select-none"
+                  className="flex cursor-pointer list-none items-center justify-between py-4 text-left text-base font-semibold select-none group transition-colors duration-200 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-sm"
                   onClick={(e) => {
                     e.preventDefault();
                     handleToggle(index);
                   }}
                 >
-                  {faq.question}
-                  <span aria-hidden="true" className="faq-ic">
+                  <span className={`transition-colors duration-200 ${isOpen ? "text-primary" : "group-hover:text-primary"}`}>
+                    {faq.question}
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className={`grid size-7 place-items-center rounded-full text-xl font-light text-primary transition-all duration-300 ease-out ${
+                      isOpen
+                        ? "rotate-45 bg-secondary text-primary"
+                        : "rotate-0 group-hover:bg-secondary/70"
+                    }`}
+                  >
                     +
                   </span>
                 </summary>
-                <div className="pb-4 leading-relaxed text-muted-foreground">
-                  {faq.answer}
+                <div
+                  className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                    isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="pb-4 pt-1 leading-relaxed text-muted-foreground">
+                      {faq.answer}
+                    </div>
+                  </div>
                 </div>
               </details>
             );

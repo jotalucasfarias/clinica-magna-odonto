@@ -32,7 +32,7 @@ export function Location() {
   return (
     <section id="localizacao" className="py-20 md:py-28">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-5 md:px-8">
-        <div className="md:col-span-2">
+        <div className="reveal md:col-span-2">
           <p className="eyebrow">Como chegar</p>
           <h2 className="mt-4 text-3xl font-medium text-primary md:text-4xl">
             Na Zona Sul de Porto Velho
@@ -57,13 +57,16 @@ export function Location() {
             href={siteConfig.maps.directionsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5 hover:brightness-110"
+            className="group mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all duration-300 ease-out hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg hover:shadow-primary/20 active:translate-y-0 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
-            <Navigation className="size-4" aria-hidden="true" />
+            <Navigation className="size-4 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
             Abrir rota no mapa
           </a>
 
-          <div id="horarios" className="mt-10 rounded-3xl border border-border bg-card p-6">
+          <div
+            id="horarios"
+            className="mt-10 rounded-3xl border border-border bg-card p-6 transition-all duration-300 ease-out hover:border-primary/25 hover:shadow-md"
+          >
             <h3 className="flex items-center gap-2 font-sans text-base font-semibold tracking-normal text-foreground">
               <Clock className="size-5 text-accent" aria-hidden="true" />
               Horários de atendimento
@@ -88,10 +91,10 @@ export function Location() {
           </div>
         </div>
 
-        <div className="md:col-span-3">
+        <div className="reveal reveal-delay-200 md:col-span-3">
           <div
             ref={mapContainerRef}
-            className="relative h-full min-h-80 overflow-hidden rounded-3xl bg-sand"
+            className="relative h-full min-h-80 overflow-hidden rounded-3xl bg-sand transition-shadow duration-300 hover:shadow-md"
             id="lazy-map"
           >
             {mapLoaded ? (
