@@ -51,11 +51,8 @@ export const metadata: Metadata = {
     images: ["/images/hero-clinic.jpg"],
   },
   icons: {
-    icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "32x32" },
-    ],
-    apple: [{ url: "/icon.svg" }],
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };
 
