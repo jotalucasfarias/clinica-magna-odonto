@@ -28,7 +28,7 @@ export const siteConfig = {
   },
   maps: {
     directionsUrl:
-      "https://www.google.com/maps/dir/?api=1&destination=Av.%20Jatuarana%2C%204941%2C%20Sala%2001%2C%20Nova%20Floresta%2C%20Porto%20Velho%20-%20RO%2C%2076807-441",
+      "https://maps.app.goo.gl/dihLcoWx4ddPqsaH9",
     embedUrl:
       "https://www.google.com/maps?q=Av.%20Jatuarana%2C%204941%2C%20Sala%2001%2C%20Nova%20Floresta%2C%20Porto%20Velho%20-%20RO%2C%2076807-441&output=embed",
   },
